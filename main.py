@@ -5,15 +5,14 @@ Ciphers found at en.wikipedia.org/wiki/Category:Classical_ciphers. https://inven
 
 #for offset cypher
 ALPHA1 = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
-AlPHA2 = ':;/|!@#$%^&*()_+-=}{][?><,."'
+AlPHA2 = ':;/|!@#$%^&*()_+-=}{][?><,." '
 ALPHABET = ALPHA1 + AlPHA2
-n = 0 # for offset cypher
 
   
 def adfgvx():
   """The ADFGVX cipher. Informations at en.wikipedia.org/wiki/ADFGVX_cipher."""
 
-#offset cypher
+# offset cypher
 
 def offset_cipher():
   """an offset cypher I made -Koko"""
@@ -21,11 +20,21 @@ def offset_cipher():
   offset_number = int(input("select offset key (must be number): "))
   output = ""
   for x in cipher_text:
-    n = 0
-    while x != ALPHABET[n]:
+    n = 2
+    while x != ALPHABET[n - 2]:
       n += 1
     n = str(n + offset_number)
     output = output + n + "/"
     n = int(n)
   print(output)
+
+# DECRYPT AREA #
+
+# offset dycrypt
+
+# def offset_cipher_decrypt():
+
+
+# MAIN
+
 offset_cipher()

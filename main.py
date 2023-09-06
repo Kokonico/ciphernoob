@@ -52,7 +52,6 @@ def offset_decrypt():
   for a in inlist:
     inlist2.append(int(a) - offset_key)
   # convert to regular characters
-  print(inlist2)
   for y in inlist2:
     result.append(ALPHABET[y - 2])
   print(''.join(result))

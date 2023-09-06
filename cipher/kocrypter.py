@@ -21,7 +21,7 @@ def kocrypter_encrypt(cmdinput, cmdkey):
 
     for x in cmdinput:
         if x in cipher.shared.ALPHABET:
-            n = (cipher.shared.ALPHABET.index(x) + offset_number + trueshift) % alpha_l
+            n = (cipher.shared.ALPHABET.index(x) + trueshift) % alpha_l
             n = str(n)
             outlist.append(n)
 
@@ -56,7 +56,7 @@ def kocrypter_decrypt(cmdinput, cmdkey):
 
     # Remove offset using the key
     for a in inlist:
-        n = (int(a) - offset_key - trueshift) % alpha_l
+        n = (int(a) - trueshift) % alpha_l
         n = str(n)
         inlist2.append(n)
 

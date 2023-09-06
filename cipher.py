@@ -33,7 +33,7 @@ def kocrypter_encrypt(cmdinput, cmdkey):
     n = 2
     while x != ALPHABET[n - 2]:
       n += 1
-    n = str(n + offset_number + trueshift)
+    n = str(n * offset_number - offset_number + trueshift)
     outlist.append(n)
     n = int(n)
   pos %= len(outlist)
@@ -65,8 +65,8 @@ def kocrypter_decrypt(cmdinput, cmdkey):
   
   # remove offset via key
   for a in inlist:
-    inlist2.append(int(a) - offset_key - trueshift)
+    inlist2.append(int(a) / offset_key + offset_key - trueshift)
   # convert to regular characters
   for y in inlist2:
-    result.append(ALPHABET[y - 2])
+    result.append(ALPHABET[int(y) - 2])
   return ''.join(result)

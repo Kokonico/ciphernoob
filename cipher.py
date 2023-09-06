@@ -16,8 +16,8 @@ def adfgvx():
 
 def kocrypter_encrypt(cmdinput, cmdkey):
   """ciphers plain text via offsetting and converting into numbers. Made by me, Koko."""
-  cipher_text = input("enter top secret info: ")
-  offset_number = int(input("select offset key (must be number, preferably big.): "))
+  cipher_text = cmdinput
+  offset_number = int(cmdkey)
   pos = offset_number
   output = ""
   outlist = []
@@ -38,7 +38,7 @@ def kocrypter_encrypt(cmdinput, cmdkey):
     n = int(n)
   pos %= len(outlist)
   output = '/'.join(map(str, outlist[-pos:] + outlist[:-pos]))
-  print(output)
+  return output
 
 # DECRYPT AREA #
 
@@ -46,8 +46,8 @@ def kocrypter_encrypt(cmdinput, cmdkey):
 
 def kocrypter_decrypt(cmdinput, cmdkey):
   """decrypt the offset cipher, assuming you know the key."""
-  offset_code = input("enter what you would like to decrypt: ")
-  offset_key = int(input("enter the key to said encryption: "))
+  offset_code = cmdinput
+  offset_key = int(cmdkey)
   reverse_offset = offset_key * -1
   inlist = offset_code.split("/")
   offpos = reverse_offset
@@ -69,4 +69,4 @@ def kocrypter_decrypt(cmdinput, cmdkey):
   # convert to regular characters
   for y in inlist2:
     result.append(ALPHABET[y - 2])
-  print(''.join(result))
+  return ''.join(result)

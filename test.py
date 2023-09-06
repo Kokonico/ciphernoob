@@ -5,11 +5,11 @@
 # general
 import unittest
 
-import ciphers
+import cipher
 
 t = "sample message"
 # kocrypter
 class kocrypter(unittest.TestCase):
 
   def encrypt_to_decrypt(self):
-    self.assertEqual(ciphers.kocrypter_decrypt(ciphers.kocrypter_encrypt(t, 22), 22), t)
+    self.assertEqual(cipher.kocrypter_decrypt(cipher.kocrypter_encrypt(t, 22), 22), t)

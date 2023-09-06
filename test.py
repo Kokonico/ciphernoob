@@ -5,7 +5,7 @@
 # USAGE:
 
 # 1: make sure your test names start with "test"
-# 2: run the following command in shell to test everything.
+# 2: run the following command in SHELL (NOT console) to test everything.
 
 ## python -m unittest discover -v ##
 
@@ -20,3 +20,4 @@ class kocrypter(unittest.TestCase):
 
   def test_encrypt_to_decrypt(self):
     self.assertEqual(cipher.kocrypter_decrypt(cipher.kocrypter_encrypt(t, 22), 22), t)
+  

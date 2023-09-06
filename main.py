@@ -12,20 +12,28 @@ ALPHABET = ALPHA1 + AlPHA2
 def adfgvx():
   """The ADFGVX cipher. Informations at en.wikipedia.org/wiki/ADFGVX_cipher."""
 
-# offset cypher
+# kocrypter
 
-def offset_cipher():
-  """ciphers plain text via offsetting and converting into numbers."""
+def kocrypter_encrypt():
+  """ciphers plain text via offsetting and converting into numbers. Made by me, Koko."""
   cipher_text = input("enter top secret info: ")
   offset_number = int(input("select offset key (must be number, preferably big.): "))
   pos = offset_number
   output = ""
   outlist = []
+  #Get ROT
+  numre = 0
+  trueshift = 0
+  while numre != offset_number:
+    numre += 1
+    trueshift += 1
+    if trueshift > len(ALPHABET):
+      trueshift = 0
   for x in cipher_text:
     n = 2
     while x != ALPHABET[n - 2]:
       n += 1
-    n = str(n + offset_number)
+    n = str(n + offset_number + trueshift)
     outlist.append(n)
     n = int(n)
   pos %= len(outlist)
@@ -34,9 +42,9 @@ def offset_cipher():
 
 # DECRYPT AREA #
 
-  #offset cypher decrypt
+  #Kocrypter decrypt
 
-def offset_decrypt():
+def kocrypter_decrypt():
   """decrypt the offset cipher, assuming you know the key."""
   offset_code = input("enter what you would like to decrypt: ")
   offset_key = int(input("enter the key to said encryption: "))
@@ -47,10 +55,17 @@ def offset_decrypt():
   inlist = inlist[-offpos:] + inlist[:-offpos]
   inlist2 = []
   result = []
+  numre = 0
+  trueshift = 0
+  while numre != offset_key:
+    numre += 1
+    trueshift += 1
+    if trueshift > len(ALPHABET):
+      trueshift = 0
   
   # remove offset via key
   for a in inlist:
-    inlist2.append(int(a) - offset_key)
+    inlist2.append(int(a) - offset_key - trueshift)
   # convert to regular characters
   for y in inlist2:
     result.append(ALPHABET[y - 2])
@@ -58,5 +73,5 @@ def offset_decrypt():
 
 # MAIN
 
-offset_cipher()
-offset_decrypt()
+kocrypter_encrypt()
+kocrypter_decrypt()

@@ -16,7 +16,7 @@ import unittest
 
 import cipher
 
-t = "abcdefghijklmNOPQERSTuvWXyz &*^&%&^% %%!!@@77"
+t = cipher.ALPHABET
 # kocrypter
 class kocrypter(unittest.TestCase):
 

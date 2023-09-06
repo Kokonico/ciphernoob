@@ -1,4 +1,4 @@
-"""A module full of functions for encoding and decoding messages from classical ciphers.
+"""A module full of functions for encoding and decoding messages from classical ciphers & some custom ones.
 Ciphers found at en.wikipedia.org/wiki/Category:Classical_ciphers. https://inventwithpython.com/cracking/"""
 
 # git enabled. press "git" in tools -Koko
@@ -17,23 +17,6 @@ def adfgvx():
 
 def rot(text, rotation_number):
   """ROT cipher, based off of ROT13, uses substitution to encrypt text."""
-  numre = 0
-  trueshift = 0
-  while numre != rotation_number:
-    numre += 1
-    trueshift += 1
-    if trueshift > len(ALPHABET):
-      trueshift = 0
-  output = ""
-  for x in text:
-    n = 2
-    while x != ALPHABET[n - 2]:
-      n += 1
-    n = n + trueshift
-    if n > len(ALPHABET):
-      n = len(ALPHABET) - n
-    output = output + ALPHABET[n]
-    return output
 # kocrypter
 
 def kocrypter_encrypt(cmdinput, cmdkey):

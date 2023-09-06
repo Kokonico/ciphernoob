@@ -1,4 +1,5 @@
-"""A module full of functions for encoding and decoding messages from classical ciphers & some custom ones.
+"""A module full of functions 
+for encoding and decoding messages from a variety of ciphers.
 Ciphers found at en.wikipedia.org/wiki/Category:Classical_ciphers. https://inventwithpython.com/cracking/"""
 
 # git enabled. press "git" in tools -Koko

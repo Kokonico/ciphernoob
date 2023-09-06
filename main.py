@@ -15,17 +15,21 @@ def adfgvx():
 # offset cypher
 
 def offset_cipher():
-  """an offset cypher I made -Koko"""
+  """ciphers plain text via offsetting and converting into numbers."""
   cipher_text = input("enter top secret info: ")
-  offset_number = int(input("select offset key (must be number): "))
+  offset_number = int(input("select offset key (must be number, preferably big.): "))
+  pos = offset_number
   output = ""
+  outlist = []
   for x in cipher_text:
     n = 2
     while x != ALPHABET[n - 2]:
       n += 1
     n = str(n + offset_number)
-    output = output + n + "/"
+    outlist.append(n)
     n = int(n)
+  pos %= len(outlist)
+  output = '/'.join(map(str, outlist[-pos:] + outlist[:-pos]))
   print(output)
 
 # DECRYPT AREA #

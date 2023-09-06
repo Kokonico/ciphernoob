@@ -17,6 +17,7 @@ def adfgvx():
 
 def rot(text, rotation_number):
   """ROT cipher, based off of ROT13, uses substitution to encrypt text."""
+
 # kocrypter
 
 def kocrypter_encrypt(cmdinput, cmdkey):

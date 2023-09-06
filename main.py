@@ -1,3 +1,4 @@
+# not needed for projects involving cipher module, just an example.
 import cipher
 
 cipher_text = input("enter top secret info: ")

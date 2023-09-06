@@ -8,65 +8,98 @@ ALPHA1 = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'''
 AlPHA2 = ''':;/|!@#$%^&*()_+-=}{][?><,.'" '''
 ALPHABET = ALPHA1 + AlPHA2
 
+# ADFGVX
   
 def adfgvx():
   """The ADFGVX cipher. Informations at en.wikipedia.org/wiki/ADFGVX_cipher."""
 
-# kocrypter
+# ROT13
 
-def kocrypter_encrypt(cmdinput, cmdkey):
-  """ciphers plain text via offsetting and converting into numbers. Made by me, Koko."""
-  cipher_text = cmdinput
-  offset_number = int(cmdkey)
-  pos = offset_number
-  output = ""
-  outlist = []
-  #Get ROT
+def rot(text, rotation_number):
+  """ROT cipher, based off of ROT13, uses substitution to encrypt text."""
   numre = 0
   trueshift = 0
-  while numre != offset_number:
+  while numre != rotation_number:
     numre += 1
     trueshift += 1
     if trueshift > len(ALPHABET):
       trueshift = 0
-  for x in cipher_text:
+  output = ""
+  for x in text:
     n = 2
     while x != ALPHABET[n - 2]:
       n += 1
-    n = str(n * offset_number - offset_number + trueshift)
-    outlist.append(n)
-    n = int(n)
-  pos %= len(outlist)
-  output = '/'.join(map(str, outlist[-pos:] + outlist[:-pos]))
-  return output
+    n = n + trueshift
+    if n > len(ALPHABET):
+      n = len(ALPHABET) - n
+    output = output + ALPHABET[n]
+    return output
+# kocrypter
+
+def kocrypter_encrypt(cmdinput, cmdkey):
+    """Encrypts plain text by shifting and converting into numbers."""
+    offset_number = int(cmdkey)
+    pos = offset_number
+    output = ""
+    outlist = []
+
+    # Calculate the true shift value
+    numre = 0
+    trueshift = 0
+    alphabet_length = len(ALPHABET)
+
+    while numre != offset_number:
+        numre += 1
+        trueshift += 1
+        if trueshift >= alphabet_length:
+            trueshift = 0
+
+    for x in cmdinput:
+        if x in ALPHABET:
+            n = (ALPHABET.index(x) + offset_number + trueshift) % alphabet_length
+            n = str(n)
+            outlist.append(n)
+
+    pos %= len(outlist)
+    output = '/'.join(map(str, outlist[-pos:] + outlist[:-pos]))
+    return output
 
 # DECRYPT AREA #
 
   #Kocrypter decrypt
 
 def kocrypter_decrypt(cmdinput, cmdkey):
-  """decrypt the offset cipher, assuming you know the key."""
-  offset_code = cmdinput
-  offset_key = int(cmdkey)
-  reverse_offset = offset_key * -1
-  inlist = offset_code.split("/")
-  offpos = reverse_offset
-  offpos %= len(inlist)
-  inlist = inlist[-offpos:] + inlist[:-offpos]
-  inlist2 = []
-  result = []
-  numre = 0
-  trueshift = 0
-  while numre != offset_key:
-    numre += 1
-    trueshift += 1
-    if trueshift > len(ALPHABET):
-      trueshift = 0
-  
-  # remove offset via key
-  for a in inlist:
-    inlist2.append(int(a) / offset_key + offset_key - trueshift)
-  # convert to regular characters
-  for y in inlist2:
-    result.append(ALPHABET[int(y) - 2])
-  return ''.join(result)
+    """Decrypt the kocrypter cipher, assuming you know the key."""
+    offset_code = cmdinput
+    offset_key = int(cmdkey)
+    reverse_offset = offset_key * -1
+    inlist = offset_code.split("/")
+    offpos = reverse_offset
+    offpos %= len(inlist)
+    inlist = inlist[-offpos:] + inlist[:-offpos]
+    inlist2 = []
+    result = []
+
+    # Calculate the true shift value for decryption
+    numre = 0
+    trueshift = 0
+    alphabet_length = len(ALPHABET)
+
+    while numre != offset_key:
+        numre += 1
+        trueshift += 1
+        if trueshift >= alphabet_length:
+            trueshift = 0
+
+    # Remove offset using the key
+    for a in inlist:
+        n = (int(a) - offset_key - trueshift) % alphabet_length
+        n = str(n)
+        inlist2.append(n)
+
+    # Convert back to regular characters
+    for y in inlist2:
+        if y.isdigit():
+            result.append(ALPHABET[int(y)])
+
+    return ''.join(result)

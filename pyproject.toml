@@ -6,6 +6,8 @@ authors = ["name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"
+auto-mix-prep = "^0.2.0"
+cipher = "^0.1"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md

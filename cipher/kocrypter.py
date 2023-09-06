@@ -11,17 +11,17 @@ def kocrypter_encrypt(cmdinput, cmdkey):
     # Calculate the true shift value
     numre = 0
     trueshift = 0
-    alphabet_length = len(cipher.shared.ALPHABET)
+    alpha_l = len(cipher.shared.ALPHABET)
 
     while numre != offset_number:
         numre += 1
         trueshift += 1
-        if trueshift >= alphabet_length:
+        if trueshift >= alpha_l:
             trueshift = 0
 
     for x in cmdinput:
         if x in cipher.shared.ALPHABET:
-            n = (cipher.shared.ALPHABET.index(x) + offset_number + trueshift) % alphabet_length
+            n = (cipher.shared.ALPHABET.index(x) + offset_number + trueshift) % alpha_l
             n = str(n)
             outlist.append(n)
 
@@ -46,17 +46,17 @@ def kocrypter_decrypt(cmdinput, cmdkey):
     # Calculate the true shift value for decryption
     numre = 0
     trueshift = 0
-    alphabet_length = len(cipher.shared.ALPHABET)
+    alpha_l = len(cipher.shared.ALPHABET)
 
     while numre != offset_key:
         numre += 1
         trueshift += 1
-        if trueshift >= alphabet_length:
+        if trueshift >= alpha_l:
             trueshift = 0
 
     # Remove offset using the key
     for a in inlist:
-        n = (int(a) - offset_key - trueshift) % alphabet_length
+        n = (int(a) - offset_key - trueshift) % alpha_l
         n = str(n)
         inlist2.append(n)
 

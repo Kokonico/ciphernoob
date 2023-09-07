@@ -1,6 +1,7 @@
 # not needed for projects involving cipher package, just an example.
 
-# import "kocrypter" cipher.
+# imports "kocrypter" cipher.
+
 import cipher.kocrypter
 
 while True:

@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "python-template"
+name = "Cipher"
 version = "0.1.0"
-description = ""
-authors = ["name <you@example.com>"]
+description = "A package full of functions for encoding and decoding messages from a variety of ciphers.Ciphers found at en.wikipedia.org/wiki/Category:Classical_ciphers. https://inventwithpython.com/cracking/"
+authors = ["Kokonico <kokonico@duck.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.11"

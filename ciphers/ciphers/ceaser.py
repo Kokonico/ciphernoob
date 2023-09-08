@@ -1,4 +1,4 @@
-from cipher.general_purpose import ALPHABET
+from ciphers.general_purpose import ALPHABET
 
 
 def ceaser(text: str, key: int, mode: bool, capitals: bool = False):

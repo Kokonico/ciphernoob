@@ -1,4 +1,5 @@
-"""General purpose variables and functions used throughout the program."""
+"""General purpose variables and functions used throughout the package internally.
+not meant for outer-package uses."""
 
 # General purpose variables
 ALPHABET = 'abcdefghijklmnopqrstuvwxyz'

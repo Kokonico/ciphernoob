@@ -1,4 +1,6 @@
-
+# dear whoever reads this
+# I am so, very sorry for what you are about to see
+# please forgive me.
 A1 = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'''
 A2 = ''':;/|!@#$%^&*()_+-=}{][?><,.'" ☐☑☒✓☺äü·∄∃’‘”“❛❜❝❞—–²¹x⁰ⁱ'''
 A3 = '''⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐₑₒₓₔ áâäéêëíîïñśó'''
@@ -35,7 +37,9 @@ A33 = '''⣠⣡⣢⣣⣤⣥⣦⣧⣨⣩⣪⣫⣬⣭⣮⣯⣰⣱⣲⣳⣴⣵⣶�
 
 ALPHABET = A1 + A2 + A3 + A4 + A5 + A6 + A7 + A8 + A9 + A10 + A11 + A12 + A13
 ALPHABET += A14 + A15 + A16 + A17 + A18 + A19 + A20 + A21 + A22 + A23 + A24 + A25 + A26
-ALPHABET += A27 + A28 + A29 + A30 + A31 + A32 + A33
+ALPHABET += A27 + A28 + A29 + A30 + A31 + A32 + A33 # horrible implementation
+# but it works.
+# deal with it.
 def kocrypt(cmdinput, cmdkey, mode: bool,):
     """Encrypts plain text by shifting and converting into numbers. use "mode" to select
  encryption or decryption"""
@@ -65,7 +69,8 @@ def kocrypt(cmdinput, cmdkey, mode: bool,):
       pos %= len(outlist)
       output = '/'.join(map(str, outlist[-pos:] + outlist[:-pos]))
       return output
-     
+    # TODO: fix this mess.
+    # too many variables.
     else: 
       if not mode:
       
@@ -103,4 +108,5 @@ def kocrypt(cmdinput, cmdkey, mode: bool,):
   
         return ''.join(result)
       else:
+        #  tell the user they don't know what they are doing
         ValueError("invalid mode")

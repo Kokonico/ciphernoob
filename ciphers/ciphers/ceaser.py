@@ -1,6 +1,10 @@
+<<<<<<< HEAD:cipher/ciphers/ceaser.py
 <<<<<<< HEAD:cipher/classical.py
 =======
 from cipher.general_purpose import ALPHABET
+=======
+from ciphers.general_purpose import ALPHABET
+>>>>>>> 766e9d7 (cleaned up & removed unnecessary files.):ciphers/ciphers/ceaser.py
 
 
 def ceaser(text: str, key: int, mode: bool, capitals: bool = False):

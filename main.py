@@ -3,6 +3,8 @@
 # imports "kocrypter" cipher.
 
 import cipher.kocrypter
+from cipher.classical import *
+
 
 while True:
   request = input("""What do you want to do?

@@ -6,6 +6,7 @@ from cipher.general_purpose import ALPHABET
 from ciphers.general_purpose import ALPHABET
 >>>>>>> 766e9d7 (cleaned up & removed unnecessary files.):ciphers/ciphers/ceaser.py
 
+
 # does not pass encrypt to decrypt test.
 # todo: fix
 def ceaser(text: str, key: int, mode: bool, capitals: bool = False):

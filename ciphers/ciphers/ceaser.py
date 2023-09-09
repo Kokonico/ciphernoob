@@ -1,6 +1,7 @@
 from ciphers.general_purpose import ALPHABET
 
-
+# does not pass encrypt to decrypt test.
+# todo: fix
 def ceaser(text: str, key: int, mode: bool, capitals: bool = False):
   """The ceaser (or substitution) cipher. The text parameter takes in plaintext or 
   ciphertext, the key takes in a key (does NOT validate it through), and mode takes in

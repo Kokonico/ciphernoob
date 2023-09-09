@@ -1,5 +1,6 @@
 # for replit. do not touch.
 { pkgs }: {
-  deps = [
+  deps = [pkgs.nano
+
   ];
 }

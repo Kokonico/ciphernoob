@@ -1,6 +1,6 @@
 # Cipher
 ## a package about encrypting and decrypting.
-cipher is a *school project* made by me and my freinds. it is a package for python that contains several ciphers.
+cipher is a *school project* made by me and my 2 classmates. it is a package for python that contains several ciphers.
 
 Cipher list
 ===========

@@ -3,3 +3,4 @@
 replit.nix
 *.DS_store
 **/__pycache__
+main.py

@@ -3,6 +3,7 @@
 # imports "kocrypter" cipher.
 
 import cipher.kocrypter
+
 # from cipher.classical import *
 
 

@@ -1,6 +1,6 @@
 # tests to make sure you didn't break anything.
 
-# to run tests type "python -m unittest cipher.testing.tests" into shell.
+# to run tests type "python -m unittest ciphers.testing.tests" into shell.
 import unittest
 
 import ciphers

@@ -1,5 +1,6 @@
 from ciphers.general_purpose import ALPHABET
 
+
 # does not pass encrypt to decrypt test.
 # todo: fix
 def ceaser(text: str, key: int, mode: bool, capitals: bool = False):

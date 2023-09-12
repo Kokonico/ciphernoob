@@ -4,6 +4,7 @@
 
 import ciphers
 
+ciphers.adfgvx("hello world", True)
 while True:
   request = input("""What do you want to do?
   1: encrypt.

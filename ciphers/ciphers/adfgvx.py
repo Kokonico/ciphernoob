@@ -1,5 +1,6 @@
 # TODO: make the actual product.
-from ciphers.general_purpose import ncon
+from ciphers.utils import ncon
+
 
 def adfgvx(input, mode: bool):
   """The ADFGVX cipher. Informations at en.wikipedia.org/wiki/ADFGVX_cipher."""

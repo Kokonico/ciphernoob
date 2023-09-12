@@ -5,3 +5,4 @@ replit.nix
 **/__pycache__
 main.py
 **.breakpoints
+**.pyc

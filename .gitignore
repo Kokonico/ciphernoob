@@ -6,3 +6,4 @@ replit.nix
 main.py
 **.breakpoints
 **.pyc
+**.pythonlibs

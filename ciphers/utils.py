@@ -3,7 +3,7 @@ not meant for outer-package uses."""
 
 # General purpose variables
 ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
-CHARACTERS = '1234567890!@#$%^&*()'
+CHARACTERS = '''!@#$%^&*)(-=_+}{][|'" ~`><,.?/:;'''
 NUMBERS = '0123456789'
 
 # General purpose functions

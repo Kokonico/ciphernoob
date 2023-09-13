@@ -1,10 +1,11 @@
-from .untils import ALPHABET
+from ciphers.utils import ALPHABET
+
 
 def ceaser(text: str, key: int, encrypt=True) -> str:
     """Implementation of the ceaser cipher. (Also known as the
-    shift\\substitution cipher). The parameter 'text' takes in either
+    shift/substitution cipher). The parameter 'text' takes in either
     plaintext or ciphertext, 'key' is the key for the cipher, and
-    the 'encrypt' parameter either decides whehter the text is encrypted or decrypted.
+    the 'encrypt' parameter either decides whether the text is encrypted or decrypted.
     See wikipedia.org/wiki/Caesar_cipher for more information about this cipher.
     Made in the China, by SoggyWetWater."""
     new_text = ""

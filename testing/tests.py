@@ -4,9 +4,9 @@
 import unittest
 
 import ciphers
-from ciphers import general_purpose
+from ciphers import utils
 
-t = general_purpose.ALPHABET
+t = utils.ALPHABET
 
 # Kocrypter tests
 
@@ -18,4 +18,4 @@ class Kocrypter(unittest.TestCase):
 # Ceaser tests
 class ceaser(unittest.TestCase):
   def test_encrypt_decrypt_clairity_ceaser(self):
-    self.assertEqual(ciphers.ceaser(ciphers.ceaser(t, 15, True), 15, False), t)
+    self.assertEqual(ciphers.ceaser(ciphers.ceaser(t, 3, True), 3, False), t)

@@ -1,19 +1,30 @@
-# TODO: make the actual product.
-from ciphers.utils import ncon
+from ciphers.utils import ALPHABET, CHARACTERS, NUMBERS
 
 
-def adfgvx(input, mode: bool):
+def adfgvx(input: str, mode: bool):
   """The ADFGVX cipher. Informations at en.wikipedia.org/wiki/ADFGVX_cipher."""
-  # generate grid for encyphering.
+  # generate grid variables.
+  chars = ALPHABET + NUMBERS
   gridx = 0
-  gridy = 1
+  gridy = 0
   grid = {}
+  # generate reused code
   # generate grid values.
-  for i in input:
-    if i not in grid:
-      gridx += 1
-      if gridx == 6:
-        gridx = 0
-        gridy += 1
-      grid[i] = ncon(gridx, gridy)
-  print(grid)
+  if mode:
+    for i in input:
+      if i not in grid and i not in CHARACTERS:
+        grid[i] = [gridx, gridy]
+        gridx += 1
+        if gridx == 6:
+          gridx = 0
+          gridy += 1
+    for i in chars:
+      if i not in grid and i not in CHARACTERS:
+        gridx += 1
+        if gridx == 6:
+          gridx = 0
+          gridy += 1
+        grid[i] = [gridx, gridy] # behold, garbage code.
+    print(grid) #TODO: remove this.
+    for i in input:
+      # I'll fix this tommorow.

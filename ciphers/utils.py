@@ -2,16 +2,20 @@
 not meant for outer-package uses."""
 
 # General purpose variables
-ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
-CHARACTERS = '''!@#$%^&*)(-=_+}{][|'" ~`><,.?/:;'''
-NUMBERS = '0123456789'
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+CHARACTERS = """!@#$%^&*)(-=_+}{][|'" ~`><,.?/:;"""
+NUMBERS = "0123456789"
+
 
 # General purpose functions
 def get_case(letter: str):
-  """Takes in a letter and returns True if it's a capital."""
-  return letter in ALPHABET.lower()
-  # mush two numbers together withou adding them.
+    """Takes in a letter and returns True if it's a capital."""
+    return letter in ALPHABET.lower()
+    # mush two numbers together withou adding them.
+
+
 def mush(num1, num2):
-  num1 = str(num1)
-  num2 = str(num2)
-  return int(num1 + num2)
+    """Concatenates two numbers together"""
+    num1 = str(num1)
+    num2 = str(num2)
+    return int(num1 + num2)

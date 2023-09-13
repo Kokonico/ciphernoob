@@ -26,5 +26,4 @@ def adfgvx(input: str, mode: bool):
           gridy += 1
         grid[i] = [gridx, gridy] # behold, garbage code.
     print(grid) #TODO: remove this.
-    for i in input:
-      # I'll fix this tommorow.
+# add else here

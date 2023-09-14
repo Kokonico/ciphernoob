@@ -74,4 +74,5 @@ def adfgvx(cmd: str, col_key: str, alphamap, mode: bool):
             return " ".join(result.values())
 
 
-# add else here
+# add else here.
+# TODO: decrypt script here.

@@ -11,8 +11,8 @@ t = utils.ALPHABET
 # util tests
 
 class util(unittest.TestCase):
-  def test_mush(self):
-    self.assertEqual(utils.mush(4,5), 45)
+  def test_n_mush(self):
+    self.assertEqual(utils.n_mush(4,5), 45)
   def test_getcase(self):
     self.assertEqual(utils.get_case("A"), True)
     self.assertEqual(utils.get_case("a"), False)

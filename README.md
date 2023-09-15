@@ -9,3 +9,5 @@ Cipher list
 **2.** Ceaser Cipher. an offset cipher, originaly used by [Julius Ceaser himself](https://en.wikipedia.org/wiki/Caesar_cipher).
 <br>
 **3.** AFDGVX. the cipher the [germans used during ww2](https://en.wikipedia.org/wiki/ADFGVX_cipher)
+<br>
+**4.** pig latin. a simpel play on words.

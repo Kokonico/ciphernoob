@@ -5,3 +5,4 @@ Ciphers found at en.wikipedia.org/wiki/Category:Classical_ciphers."""
 from .ciphers.adfgvx import adfgvx, adfgvx_gen
 from .ciphers.ceaser import ceaser
 from .ciphers.kocrypter import kocrypt
+from .ciphers.piglat import piglat

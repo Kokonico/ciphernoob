@@ -11,38 +11,19 @@ NUMBERS = "0123456789"
 def get_case(letter: str):
     """Takes in a letter and returns True if it's a capital."""
     return letter in ALPHABET.lower()
-    # mush two numbers together withou adding them.
 
 
 def n_mush(num1, num2):
     """Concatenates two numbers together"""
-    num1 = str(num1)
-    num2 = str(num2)
-    return int(num1 + num2)
+    return num1 * (10 ** len(str(num2))) + num2
 
 
 def d_mush(dictionary: dict):
-    """Concatenates a dictionaries values into a string"""
+    """Concatenates a dictionary's values into a string"""
     if isinstance(dictionary, dict):
         return "".join(str(val) for val in dictionary.values())
     else:
-        TypeError("the provided value is not a dictionary.")
-
-
-def chunkstring(string, length):
-    """split strings into itty-bity peices"""
-    counter = 0
-    result = []
-    internal_string = ""
-    for i in string:
-        counter += 1
-        internal_string += i
-        if counter == length:
-            counter = 0
-            result.append(internal_string)
-            internal_string = ""
-    return result
-
+        raise TypeError("the provided value is not a dictionary.")
 
 def r_check(x: str):
     """check for repeating characters"""
@@ -54,13 +35,17 @@ def chunk_string(string, chunk_size):
     return [string[i : i + chunk_size] for i in range(0, len(string), chunk_size)]
 
 
-def row_column_converter(input_dict):
-    """merge the first letters of a dictionary with a length limit"""
-    max_len = max(len(v) for v in input_dict.values())
-    result = {}
-
-    for i in range(max_len):
-        row_values = [v[i % len(v)] if len(v) > i else "" for v in input_dict.values()]
-        result[i] = "".join(row_values)
-
+def row_column_converter(input_data, is_dict):
+    if is_dict:
+        max_len = max(len(v) for v in input_data.values())
+        result = {
+            i: "".join(v[i % len(v)] if len(v) > i else "" for v in input_data.values())
+            for i in range(max_len)
+        }
+    else:
+        max_len = max(len(v) for v in input_data)
+        result = {
+            i: "".join(v[i % len(v)] if len(v) > i else "" for v in input_data)
+            for i in range(max_len)
+        }
     return result

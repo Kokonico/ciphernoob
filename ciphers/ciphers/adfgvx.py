@@ -5,12 +5,14 @@ from ciphers.utils import (
     NUMBERS,
     chunk_string,
     d_mush,
+    find_key,
     r_check,
     row_column_converter,
 )
 
 
 def adfgvx_gen(key):
+    """generate an alphamap for the adfgvx cipher."""
     CMAP = "ADFGVX"
     gridchars = key + ALPHABET + NUMBERS
     gridx = 0
@@ -31,6 +33,7 @@ def adfgvx_gen(key):
 
 
 def adfgvx(cmd: str, col_key: str, alphamap, mode: bool):
+    """the adfgvx cipher, developed by the germans for war."""
     if len(set(col_key)) != len(col_key):
         raise ValueError("col_key contains repeating characters")
 
@@ -46,9 +49,11 @@ def adfgvx(cmd: str, col_key: str, alphamap, mode: bool):
     col_map = map2
     col_order = list(col_map.values())
 
+    # if alphamap is not an alphabet mapping, create one. 
+    grid = adfgvx_gen(alphamap) if not isinstance(alphamap, dict) else alphamap
+  
     if mode:
         # Encryption
-        grid = adfgvx_gen(alphamap) if not isinstance(alphamap, dict) else alphamap
         for i in cmd:
             if i in grid:
                 intermediate += "".join(grid[i])
@@ -56,7 +61,31 @@ def adfgvx(cmd: str, col_key: str, alphamap, mode: bool):
         rows = chunk_string(intermediate, len(col_key))
         columns = row_column_converter(rows, False)
         result = {i: columns[int(i)] for i in col_order}
-
+        # this once was 60+ lines.
+        # i have no clue how thats even possible.
         return " ".join(result.values())
     else:
-        # Decryption goes here
+      # decrypt
+      # convert input into columns.
+      columns = cmd.split()
+      # we now unshuffle those columns based on the col_key
+      # map the columns to the letters in the key
+      key_map = {}
+      for index, i in enumerate(columns):
+        key_map[col_order[index]] = i
+      # unshuffling
+      key_map = dict(sorted(key_map.items()))
+      # now with the unshuffled columns, we will convert them back to rows.
+      intermediate = ''.join(row_column_converter(key_map, True).values())
+      # we are now at the intermediate stage.
+      # chunk the intermediate into lists of 2 characters
+      chars = chunk_string(intermediate, 2)
+      coordlist = []
+      for i in chars:
+        coordlist.append(chunk_string(i, 1))
+      # find the characters using the alphabet map
+      # and concatenate them into result.
+      result = ""
+      for i in coordlist:
+        result += find_key(grid, i)
+      return result

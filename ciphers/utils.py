@@ -10,8 +10,19 @@ NUMBERS = "0123456789"
 # General purpose functions
 def get_case(letter: str):
     """Takes in a letter and returns True if it's a capital."""
-    return letter in ALPHABET.lower()
-
+    if len(letter) > 1:
+      raise ValueError("letter argument only supports one letter")
+    else:
+      result = None
+      alpha_cap = ALPHABET.upper()
+      alpha_low = ALPHABET
+      if letter in alpha_cap:
+        result = True
+      elif letter in alpha_low:
+        result = False
+      else:
+          raise ValueError(letter, "is an unsupported character")
+      return result
 
 def n_mush(num1, num2):
     """Concatenates two numbers together"""
@@ -49,3 +60,10 @@ def row_column_converter(input_data, is_dict):
             for i in range(max_len)
         }
     return result
+
+def find_key(dict, value):
+    for key, val in dict.items():
+        if val == value:
+            return key
+    else:
+        return ""

@@ -11,18 +11,19 @@ NUMBERS = "0123456789"
 def get_case(letter: str):
     """Takes in a letter and returns True if it's a capital."""
     if len(letter) > 1:
-      raise ValueError("letter argument only supports one letter")
+        raise ValueError("letter argument only supports one letter")
     else:
-      result = None
-      alpha_cap = ALPHABET.upper()
-      alpha_low = ALPHABET
-      if letter in alpha_cap:
-        result = True
-      elif letter in alpha_low:
-        result = False
-      else:
-          raise ValueError(letter, "is an unsupported character")
-      return result
+        result = None
+        alpha_cap = ALPHABET.upper()
+        alpha_low = ALPHABET
+        if letter in alpha_cap:
+            result = True
+        elif letter in alpha_low:
+            result = False
+        else:
+            raise ValueError(letter, "is an unsupported character")
+        return result
+
 
 def n_mush(num1, num2):
     """Concatenates two numbers together"""
@@ -35,6 +36,7 @@ def d_mush(dictionary: dict):
         return "".join(str(val) for val in dictionary.values())
     else:
         raise TypeError("the provided value is not a dictionary.")
+
 
 def r_check(x: str):
     """check for repeating characters"""
@@ -61,9 +63,29 @@ def row_column_converter(input_data, is_dict):
         }
     return result
 
+
 def find_key(dict, value):
     for key, val in dict.items():
         if val == value:
             return key
     else:
         return ""
+
+
+def str_rotate(strin: str, rotate: int):
+    ro_rev = rotate * -1
+    rot_cmd = strin[:ro_rev]
+    rot_char = strin[len(strin) - rotate :]
+
+    if rotate != 0:
+        return rot_char + rot_cmd
+    else:
+        return strin
+
+
+def get_index(indec, value):
+    index = indec.find(value)
+    if index == -1:
+        raise KeyError(value, "does not exist")
+    else:
+        return index

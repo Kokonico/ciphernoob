@@ -1,5 +1,5 @@
 """The file that contains the ceaser cipher. you shouldn't be here."""
-from ciphers.utils import ALPHABET
+from ciphernoob.__utils import ALPHABET
 
 
 def ceaser(text: str, key: int, encrypt=True) -> str:

@@ -3,6 +3,7 @@ not meant for outer-package uses."""
 
 # General purpose variables
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+ALPHABET_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 CHARACTERS = """!@#$%^&*)(-=_+}{][|'" ~`><,.?/:;"""
 NUMBERS = "0123456789"
 

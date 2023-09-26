@@ -114,5 +114,5 @@ def kocrypt(
 
             return "".join(result)
         else:
-            #  tell the user they don't know what they are doing
+            # tell the user they don't know what they are doing
             ValueError("invalid mode")

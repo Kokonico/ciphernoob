@@ -1,5 +1,5 @@
 """the file that contains the adfgvx cipher. not intended for human eyes."""
-from ciphers.utils import (
+from ciphernoob.__utils import (
     ALPHABET,
     CHARACTERS,
     NUMBERS,

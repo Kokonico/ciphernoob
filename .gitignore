@@ -8,3 +8,5 @@ main.py
 **.pyc
 **.pythonlibs
 **.prettierignore
+**.vscode
+**.json

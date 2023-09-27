@@ -207,6 +207,17 @@ class binary(unittest.TestCase):
       t
     )
 
+  # match
+
+  def test_binary_parity(self):
+
+    self.assertEqual(
+      ciphers.binary("Man", True),
+      "010011010110000101101110"
+    )
+
+
+
 
 # Morse
 
@@ -231,3 +242,6 @@ class morse(unittest.TestCase):
         ciphers.morse(t, True),
         ".- -... -.-. -.. . ..-. --. .... .. .--- -.- .-.. -- -. --- .--. --.- .-. ... - ..- ...- .-- -..- -.-- --.."
     )
+
+
+

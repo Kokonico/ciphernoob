@@ -10,3 +10,4 @@ main.py
 **.prettierignore
 **.vscode
 **.json
+**.pylintrc

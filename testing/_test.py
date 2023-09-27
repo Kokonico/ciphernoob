@@ -1,6 +1,6 @@
 # tests to make sure you didn't break anything.
 
-# to run tests type "python -m unittest testing.tests" into shell
+# to run tests type "python -m unittest testing._test" into shell
 
 ## !!! PLEASE READ TEST_ALIGNMENT_RULES !!! ##
 

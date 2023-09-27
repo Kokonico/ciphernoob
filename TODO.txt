@@ -1,3 +1,9 @@
-add more ciphers.
+CHECK GOOGLE DOC: https://docs.google.com/document/d/1pl6qi_7edgSSAweybywNCPdhe9ragl5O-fRgEz2kfyM/edit
 
-not much else.
+Finish anything not completed and claim.
+MUST finished this week.
+
+TODO:
+
+  -> implement at least ~15 ciphers -- group effort.
+  -> organize unittests -- claimed by koko.

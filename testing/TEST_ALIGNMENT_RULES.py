@@ -59,3 +59,46 @@ class extest2(unittest.TestCase):
   def sample_test_2(self):
     self.assertEqual("first", "second")
     self.assertEqual("first", "second")
+
+
+# example, no commentary.
+
+## VVV VVV ###
+
+class exampletest2(unittest.TestCase):
+
+  
+  # test name
+
+  def sample_test(self):
+    
+    self.assertEqual("first", "second")
+    self.assertEqual("first", "second")
+    
+    self.assertEqual(
+      "first",
+      "second"
+    )
+
+    self.assertEqual(
+      "first",
+      "second"
+    )
+  
+
+  # test name 2
+
+  def test_2(self):
+    self.assertEqual("first", "second")
+    self.assertEqual("first", "second")
+
+
+
+
+# another class name
+
+class extest3(unittest.TestCase):
+
+  def sample_test_2(self):
+    self.assertEqual("first", "second")
+    self.assertEqual("first", "second")

@@ -125,7 +125,7 @@ class ceaser(unittest.TestCase):
       )
 
 
-  # test if aligns with other ceaser ciphers.
+  # test if aligns with other ciphers of the same type (matching)
 
   def test_ceaser_parity(self):
     self.assertEqual(
@@ -156,7 +156,7 @@ class adfgvx(unittest.TestCase):
     )
 
 
-  # alignment check
+  # match
 
   def test_adfgvx_parity(self):
     

@@ -1,3 +1,5 @@
+from ciphernoob import __utils
+
 # igpay atinlay
 
 
@@ -5,21 +7,14 @@ def piglat(cmd: str, mode: bool):
     """pig latin."""
     # divide input by words
     u_input = cmd.split()
-    result = ""
+    result = []
     if mode:
-        # encrypt word by word
+        # encrypt
         for i in u_input:
-            shift = i[-2:]
-            i_sub = i[:-2]
-            i_enc = "".join(shift) + i_sub + "ay"
-            result += i_enc + " "
-        return result
+            result.append(i[1:] + i[0] + "ay")
     else:
         # decrypt
         for i in u_input:
-            i_sub = i[:-2]
-            i_move = i[:2]
-            i_dec = i_sub[2:] + i_move
-            result += i_dec + " "
-
-        return result
+            result.append(i[-3] + i[:-3])
+    
+    return ' '.join(result)

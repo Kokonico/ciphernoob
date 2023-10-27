@@ -89,8 +89,15 @@ class util(unittest.TestCase):
       "abcdefghijklmnopqrstuvwxyz"
     )
 
+    self.assertEqual(
+      utils.str_rotate(t, -3), 
+      "defghijklmnopqrstuvwxyzabc"
+    )
 
-
+    self.assertEqual(
+      utils.str_rotate(t, -26), 
+      "abcdefghijklmnopqrstuvwxyz"
+    )
 
 # Kocrypter tests
 
@@ -203,8 +210,8 @@ class binary(unittest.TestCase):
   def test_binary_encrypt_decrypt_clarity(self):
     
     self.assertEqual(
-      ciphers.binary(ciphers.binary(t, True), False), 
-      t
+      ciphers.binary(ciphers.binary(t + n, True), False), 
+      t + n
     )
 
   # match
@@ -245,3 +252,27 @@ class morse(unittest.TestCase):
 
 
 
+
+# Pig Latin
+
+class piglatin(unittest.TestCase):
+
+
+  # parity
+  
+  def test_piglatin_encrypt_decrypt_clarity(self):
+    
+    self.assertEqual(
+      ciphers.piglat(ciphers.piglat(t, True), False),
+      t
+    )
+
+  
+  # match
+  
+  def test_piglatin_parity(self):
+    
+    self.assertEqual(
+      ciphers.piglat("hello world", True),
+      "ellohay orldway"
+    )

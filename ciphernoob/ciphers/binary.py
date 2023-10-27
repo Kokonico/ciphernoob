@@ -2,7 +2,7 @@ from ciphernoob import __utils
 
 
 def binary(message: str, mode: bool):
-
+  """binary."""
   if mode:
     # encryption
     return ''.join(format(ord(i), '08b') for i in message)

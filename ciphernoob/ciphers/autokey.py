@@ -4,6 +4,7 @@ from ciphernoob import __utils as utils
 
 
 def autokey(plaintext, keyword, mode=True, alphabet=utils.ALPHABET_UPPER):
+    """the autokey cipher."""
     plaintext = plaintext.upper()
     keyword = keyword.upper()
     key = keyword + plaintext

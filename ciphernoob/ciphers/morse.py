@@ -2,6 +2,7 @@ from ciphernoob import __utils
 
 
 def morse(message, mode):
+  """morse code."""
   translations  = {
     "A":".-",
     "B":"-...",

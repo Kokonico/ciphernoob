@@ -72,14 +72,14 @@ def find_key(dict, value):
     else:
         return ""
 
-
+# TODO: fix issue with negative numbers.
 def str_rotate(strin: str, rotate: int):
     ro_rev = rotate * -1
     rot_cmd = strin[:ro_rev]
     rot_char = strin[len(strin) - rotate :]
 
     if rotate != 0:
-        return rot_char + rot_cmd
+        return rot_char + rot_cmd   
     else:
         return strin
 
